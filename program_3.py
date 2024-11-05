@@ -12,6 +12,20 @@ def sum_numbers_from_file():
     ######################
     # Add your code here #
     ######################
+    with open('numbers.txt', 'r') as f:
+        lines = f.readlines()
+        lines = [line.replace("\n", ",") for line in lines]
+    with open('numbers.txt', 'w') as f:
+        f.writelines(lines)
+    numbers= open("numbers.txt","r")
+    stringlist=(numbers.read()).split(",")
+    intlist=[]
+    for x in stringlist:
+        intlist.append(int(x))
+
+        
+
+    print(sum(intlist))
     print('In the sum_numbers_from_file function')
 
 # You don't need to change anything below this line:
